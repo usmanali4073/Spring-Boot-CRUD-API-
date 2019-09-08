@@ -4,6 +4,7 @@ package com.speaya.libraryjpa.Entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
+import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
 
@@ -16,7 +17,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @JsonIgnoreProperties
 public class Employee {
-    @Column
+    @Column(name = "employee_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Integer id;
@@ -26,5 +27,5 @@ public class Employee {
     private String lastname;
     @Column
     private String gender;
-
+    private  int department_id;
 }
